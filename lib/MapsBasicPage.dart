@@ -20,6 +20,25 @@ class _MapsbasicpageState extends State<Mapsbasicpage> {
       tilt: 0,
       bearing: 0
   );
+  // Dhaka to Rangpure
+  static const LatLng dhaka=LatLng(23.8103, 90.4125);
+  static const LatLng rangpur=LatLng(23.8103, 90.4125);
+
+  //marker banabo eta set typer data
+  final Set<Marker> mapMarker={
+    const Marker(
+        markerId: MarkerId('dhaka'),
+        position:  dhaka,
+        infoWindow: InfoWindow(title: "Dhaka")
+        //infowindow marker upor pont korle ki show korbw oita
+    ),
+    const Marker(
+        markerId: MarkerId('rangpur'),
+        position:  rangpur,
+        infoWindow: InfoWindow(title: "Dhaka")
+    ),
+  };
+
 
 
 
@@ -38,6 +57,7 @@ class _MapsbasicpageState extends State<Mapsbasicpage> {
        compassEnabled: true,
        zoomControlsEnabled: true,
        mapType: MapType.normal,
+       // mapType: MapType.satellite,
       ),
     );
   }
