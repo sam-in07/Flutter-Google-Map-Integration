@@ -18,7 +18,9 @@ class _MapsbasicpageState extends State<Mapsbasicpage> {
       zoom: 10,
 
       tilt: 0,
-      bearing: 0
+      //
+      bearing: 0 ,
+    //koto degree oita show korbe
   );
   // Dhaka to Rangpure
   static const LatLng dhaka=LatLng(23.8103, 90.4125);
@@ -61,6 +63,11 @@ class _MapsbasicpageState extends State<Mapsbasicpage> {
     ),
   };
 
+  // On Event Show Snacbar
+  void ShowSnackBar(BuildContext context,String msg){
+    var snackBar = SnackBar(content: Text(msg));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
 
 
 
@@ -86,6 +93,10 @@ class _MapsbasicpageState extends State<Mapsbasicpage> {
         trafficEnabled: true,
         markers: mapMarker,
         polylines: mapLines,
+        //map modhe keo tap korle ki korbooo
+        onTap: (pos)=>ShowSnackBar(context,pos.toString()),
+        onLongPress: (pos)=>ShowSnackBar(context,pos.toString()),
+
 
       ),
     );
