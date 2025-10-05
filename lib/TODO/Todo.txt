@@ -1,4 +1,4 @@
-0. KEY: AIzaSyA3KP1kyVmShHUoei0xZhy0J6RNUiHiEBg
+0. KEY: AIzaSyDqIvhXBGqjedMIuTvmfTOR16JfZe98bww
 1. Get Map Platform API key form Google developer console
 2. flutter google map, geolocator
 3. How to Config API Key in Android
