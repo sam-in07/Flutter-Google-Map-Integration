@@ -39,6 +39,29 @@ class _MapsbasicpageState extends State<Mapsbasicpage> {
     ),
   };
 
+  // route points
+  static const List<LatLng> route_points=[
+    LatLng(23.8103, 90.4125), // Dhaka
+    LatLng(24.0020, 90.4200), // Gazipur area
+    LatLng(24.2500, 89.9200), // Tangail area
+    LatLng(24.4500, 89.7000), // Jamuna bridge / Sirajganj area
+    LatLng(24.8500, 89.3700), // Bogura area
+    LatLng(25.2000, 89.5200), // Gobindaganj / Gaibandha area
+    LatLng(25.4500, 89.3500), // Pirganj area
+    LatLng(25.6500, 89.3000), // Rangpur outskirts
+    LatLng(25.7439, 89.2752), // Rangpur
+  ];
+  // create a line  route point gulake ney korte hobe
+  final Set<Polyline> mapLines={
+    const Polyline(
+      polylineId: PolylineId("dhaka-rang"),
+      width: 5,
+      color: Colors.blue,
+      points: route_points,
+    ),
+  };
+
+
 
 
 
@@ -56,8 +79,14 @@ class _MapsbasicpageState extends State<Mapsbasicpage> {
        myLocationButtonEnabled: true,
        compassEnabled: true,
        zoomControlsEnabled: true,
-       mapType: MapType.normal,
+       mapType: MapType.hybrid,
+       // mapType: MapType.normal,
+
        // mapType: MapType.satellite,
+        trafficEnabled: true,
+        markers: mapMarker,
+        polylines: mapLines,
+
       ),
     );
   }
